@@ -1,19 +1,19 @@
 <div class="center-div border border-dark rounded">
   <div class="row">
     <div class="col-5">
-      <label id="lblEmail" class="float-left m-3">Email Address:</label>
+      <label id="lblEmail" class="float-left m-3">Email Address: <label class="text-danger">*</label></label>
     </div>
     <div class="col-7">
-      <input id="txtEmail" ngModel="emailAddress" class="m-3 float-left">
+      <input id="txtEmail" type="text" ngModel="emailAddress" class="m-3 float-left">
     </div>
   </div>
   <div class="row">
-    <div class="col-5"><label id="lblPassword" class="float-left m-3">Password:</label></div>
-    <div class="col-7"><input id="txtPassword" ngModel="passWord" class="m-3 float-left"></div>
+    <div class="col-5"><label id="lblPassword" class="float-left m-3">Password: <label class="text-danger">*</label></label></div>
+    <div class="col-7"><input type="password" id="txtPassword" ngModel="passWord" class="m-3 float-left"></div>
   </div>
-  <div class="row float-right">
-    <div class="col-12"><button id="btnLogin" class="btn-info m-1 float-left" (click)="loginCreation($event)">Login</button>
-      <a class="float-right" routerLink="/register"><u>Don't have an account yet?</u></a>
+  <div class="row ">
+    <div class="col-5"><button id="btnLogin" class="btn-info m-1 float-right" (click)="loginCreation($event)">Login</button> </div>
+      <div class="col-7"> <a class="float-left" routerLink="/register"><u>Don't have an account yet?</u></a>
     </div>
   </div>
 </div>
