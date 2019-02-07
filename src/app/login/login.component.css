@@ -1,0 +1,17 @@
+.center-div
+{
+  margin-top: 200px;
+  margin-right:auto;
+  margin-left:auto;
+  width: 30%;
+  height: 100%;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.loginBox{
+  /*-webkit-box-shadow: inset -1px 1px 5px 9px rgba(54,70,102,0.6);
+  -moz-box-shadow: inset -1px 1px 5px 9px rgba(54,70,102,0.6);
+  box-shadow: inset -1px 1px 5px 9px rgba(54,70,102,0.6);*/
+  border: 5px black;
+}
