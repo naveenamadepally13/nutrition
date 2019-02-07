@@ -1,4 +1,6 @@
+// import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -9,18 +11,14 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   constructor() { }
-  emailAddress;
-  passWord;
-  userKey = 'userName';
-  passwordKey = 'password';
-  textToSpeech1;
-  textToSpeech;
   loginCreation(event) {
     if (localStorage.length > 0) {
-      const localKey = localStorage.getItem(this.userKey);
-      if (localKey !== this.emailAddress) {
-        localStorage.setItem(this.userKey, this.emailAddress);
-        localStorage.setItem(this.passwordKey, this.passWord);
+      if (localStorage.getItem('EmailAddress') !== event.emailAddress) {
+        Swal.fire('Your do not have an account. Please create an account.');
+      } else {
+        if (localStorage.getItem('EmailAddress') === event.emailAddress && localStorage.getItem('Password') !== event.passWord) {
+          Swal.fire('Password is incorrect. Please enter correct password');
+        }
       }
     }
   }

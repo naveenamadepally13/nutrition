@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
+import 'sweetalert2/src/sweetalert2.scss';
 
 @Component({
   selector: 'app-register',
@@ -8,38 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterComponent implements OnInit {
 
   constructor() { }
-  registerMessage;
-  firstNameKey = 'FirstName';
-  firstName;
-  lastNameKey = 'LastName';
-  lastName;
-  emailAddressKey = 'EmailAddress';
-  emailAddress;
-  passwordKey = 'Password';
-  password;
-  getEmailAddress;
-  dialogDisplay = 'none';
+  /*dialogDisplay = 'none';*/
   registerAccount(event) {
-    this.getEmailAddress = localStorage.getItem(this.emailAddress);
-    if (this.getEmailAddress !== this.emailAddress) {
-      localStorage.setItem(this.firstNameKey, this.firstName);
-      localStorage.setItem(this.lastNameKey, this.lastName);
-      localStorage.setItem(this.emailAddressKey, this.emailAddress);
-      localStorage.setItem(this.passwordKey, this.password);
-      this.registerMessage = 'Your account has been registered. Please enter your Email Address and Password on Login page.';
-      this.openModalDialog();
+    if (localStorage.getItem('EmailAddress') !== event.emailAddress) {
+      localStorage.setItem('FirstName', event.firstName);
+      localStorage.setItem('LastName', event.lastName);
+      localStorage.setItem('EmailAddress', event.emailAddress);
+      localStorage.setItem('Password', event.passWord);
+      Swal.fire('Your account has been successfully registered. Please enter your email Address and password to login.');
     } else {
-      this.registerMessage = 'You already have an account with Email Address {{emailAddress}}. Please click on OK button to navigate ' +
-        'to Login Page.';
+      Swal.fire('You already have an account with this email address. Please click on Login button to continue.');
     }
-  }
-
-  openModalDialog() {
-    this.dialogDisplay = 'block';
-  }
-
-  closeModalDialog() {
-    this.dialogDisplay = 'none';
   }
   ngOnInit() {
   }
