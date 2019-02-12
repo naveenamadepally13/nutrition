@@ -1,5 +1,6 @@
-<form #userRegsiter = "ngForm" (ngSubmit)="registerAccount(userRegsiter.value)">
-  <div class="center-div border border-dark rounded">
+<div class="bg-img">
+<form #userRegsiter = "ngForm" class="container" (ngSubmit)="registerAccount(userRegsiter.value)">
+  <div>
     <div class="row">
       <div class="col-12 m-3 font-weight-bold">Create your Nutrition Account</div>
     </div>
@@ -30,9 +31,9 @@
     <div class="row">
       <div class="col-5"><button id="btnRegister" type="submit" class="btn-info m-1 float-right">Register</button></div>
       <div class="col-7">
-        <a class="float-left" routerLink="/login"><u>Login if already have account</u></a>
+        <a class="float-left" style=" color: crimson;font-weight: bold;" routerLink="/login"><u>Login if already have account</u></a>
       </div>
     </div>
   </div>
 </form>
-
+</div>

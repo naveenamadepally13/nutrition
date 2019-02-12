@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
           Swal.fire('Password is incorrect. Please enter correct password');
         } else {
           if (localStorage.getItem('EmailAddress') === event.emailAddress && localStorage.getItem('Password') === event.passWord) {
-            Swal.fire('You are successfully logged in.');
             this.router.navigateByUrl('/nutrition');
           }
         }

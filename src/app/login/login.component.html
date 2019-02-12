@@ -1,5 +1,6 @@
-<form #loginUser = "ngForm" (ngSubmit)="loginCreation(loginUser.value)">
-  <div class="center-div border border-dark rounded">
+<div class="bg-img">
+<form #loginUser = "ngForm" class="container" (ngSubmit)="loginCreation(loginUser.value)">
+  <div >
     <div class="row">
       <div class="col-5">
         <label id="lblEmail" class="float-left m-3">Email Address: <label class="text-danger">*</label></label>
@@ -14,9 +15,10 @@
     </div>
     <div class="row ">
       <div class="col-5"><button id="btnLogin" class="btn-info m-1 float-right">Login</button> </div>
-        <div class="col-7"> <a class="float-left" routerLink="/register"><u>Don't have an account yet?</u></a>
+        <div class="col-7"> <a class="float-left" style=" color: crimson;font-weight: bold;" routerLink="/register"><u>Don't have an account yet?</u></a>
       </div>
     </div>
   </div>
 </form>
+</div>
 

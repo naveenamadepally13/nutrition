@@ -1,3 +1,152 @@
-<p>
-  nutrition works!
-</p>
+<div class="nutritionbg">
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-2">
+        <div class="row">
+ <img class="bgimgleft" src="../../assets/images/eatright.png">
+        </div>
+      </div>
+
+    <div class="col-md-8 ">
+    <div class="row searchrow">
+      <form #foodsearch = "ngForm" (ngSubmit) = "onClickSubmit(foodsearch.value)" >
+        <div class="form-group row" style="padding-top: 15px">
+            <input type="text" style="width:290px"  class="form-control" name="food" id="food" ngModel>
+            <button type="submit" style="width:100px" class="btn btn-info text-white">Search</button>
+        </div>
+      </form>
+      <span class="foodnamelabels" >{{finalfoodData.item_name}}</span>
+    </div>
+<div class="row ">
+  <div class="col-md-6 ">
+    <div class="row formshadow">
+      <div class="col-md-8 ">
+        <img src="../../assets/images/calories.png">
+        <span class="foodlabels">Calories</span>
+      </div>
+      <div class="col-md-4 ">
+<span class="foodlabels" >{{finalfoodData.nf_calories}}</span>
+      </div>
+    </div>
+
+    <div class="row formshadow">
+      <div class="col-md-8">
+        <img src="../../assets/images/calcium.png">
+        <span class="foodlabels">Calcium</span>
+      </div>
+      <div class="col-md-4">
+        <span class="foodlabels">{{finalfoodData.nf_calcium_dv}}</span>
+      </div>
+    </div>
+
+    <div class="row formshadow">
+      <div class="col-md-8">
+<img src="../../assets/images/carbs.png">
+        <span class="foodlabels">Carbohydrates</span>
+      </div>
+      <div class="col-md-4">
+        <span class="foodlabels">{{finalfoodData.nf_total_carbohydrate}}</span>
+      </div>
+    </div>
+
+    <div class="row formshadow">
+      <div class="col-md-8">
+<img src="../../assets/images/cholestrol.png">
+        <span class="foodlabels">Cholesterol</span>
+      </div>
+      <div class="col-md-4">
+        <span class="foodlabels">{{finalfoodData.nf_cholesterol}}</span>
+      </div>
+    </div>
+
+    <div class="row formshadow">
+      <div class="col-md-8">
+        <img src="../../assets/images/dietaryfiber.png">
+        <span class="foodlabels">Dietary Fiber</span>
+      </div>
+      <div class="col-md-4">
+        <span class="foodlabels">{{finalfoodData.nf_dietary_fiber}}</span>
+      </div>
+    </div>
+
+    <div class="row formshadow">
+      <div class="col-md-8">
+        <img src="../../assets/images/sugar.jpg">
+        <span class="foodlabels">Sugar</span>
+      </div>
+      <div class="col-md-4">
+        <span class="foodlabels">{{finalfoodData.nf_sugars}}</span>
+      </div>
+  </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row formshadow">
+      <div class="col-md-8">
+        <img src="../../assets/images/vitamina.png">
+        <span class="foodlabels">Vitamin  A</span>
+      </div>
+      <div class="col-md-4">
+        <span class="foodlabels">{{finalfoodData.nf_vitamin_a_dv}}</span>
+      </div>
+    </div>
+    <div class="row formshadow">
+      <div class="col-md-8">
+        <img src="../../assets/images/vitaminc.png">
+        <span class="foodlabels">Vitamin C</span>
+      </div>
+      <div class="col-md-4">
+        <span class="foodlabels">{{finalfoodData.nf_vitamin_c_dv}}</span>
+      </div>
+    </div>
+
+    <div class="row formshadow">
+      <div class="col-md-8">
+        <img src="../../assets/images/protein.png">
+        <span class="foodlabels">Protien</span>
+      </div>
+      <div class="col-md-4">
+        <span class="foodlabels">{{finalfoodData.nf_protein}}</span>
+      </div>
+    </div>
+    <div class="row formshadow">
+      <div class="col-md-8">
+        <img src="../../assets/images/fat2.png">
+        <span class="foodlabels">Fat</span>
+      </div>
+      <div class="col-md-4">
+        <span class="foodlabels">{{finalfoodData.nf_total_fat}}</span>
+      </div>
+    </div>
+
+    <div class="row formshadow">
+      <div class="col-md-8">
+        <img src="../../assets/images/iron.png">
+        <span class="foodlabels">Iron</span>
+      </div>
+      <div class="col-md-4">
+       <span class="foodlabels">{{finalfoodData.nf_iron_dv}}</span>
+      </div>
+    </div>
+
+    <div class="row formshadow">
+      <div class="col-md-8">
+        <img src="../../assets/images/sodium.png">
+        <span class="foodlabels">Sodium</span>
+      </div>
+      <div class="col-md-4">
+       <span class="foodlabels"> {{finalfoodData.nf_sodium}} </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </div>
+    <div class="col-md-2">
+    <div class="row ">
+      <img class="bgimgright" src="../../assets/images/veggies.png">
+    </div>
+    </div>
+  </div>
+
+  </div>
+</div>
