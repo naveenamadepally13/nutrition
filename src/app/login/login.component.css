@@ -11,14 +11,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding-top: 119px;
 }
 
 /* Add styles to the form container */
 .container {
   position: absolute;
-  right: 350px;
-  margin: 20px;
+  right: 320px;
+  margin-top: 119px;
   max-width: 535px;
   padding: 30px;
   background-color: rgba(71, 102, 100, 0.6);

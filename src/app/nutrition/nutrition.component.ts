@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
+import {textToSpeech} from '@google-cloud/text-to-speech';
+import {NutritionService} from '../nutrition.service';
 
 @Component({
   selector: 'app-nutrition',
@@ -7,8 +9,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./nutrition.component.css']
 })
 export class NutritionComponent implements OnInit {
-
-  constructor(private http: HttpClient) { }
+  date;
+  constructor(private http: HttpClient, private dateService: NutritionService) {
+    }
   foodData;
   finalfoodData;
   onClickSubmit(data) {
@@ -20,5 +23,6 @@ export class NutritionComponent implements OnInit {
     }, error => {});
   }
   ngOnInit() {
+    this.date = this.dateService.displayDate();
   }
 }

@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import {Router} from '@angular/router';
+import {NutritionService} from '../nutrition.service';
 
 @Component({
   selector: 'app-login',
@@ -9,25 +10,20 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  date;
+  constructor(private router: Router, private dateService: NutritionService) { }
   loginCreation(event) {
-    if (localStorage.length > 0) {
-      if (localStorage.getItem('EmailAddress') !== event.emailAddress) {
-        Swal.fire('Your do not have an account. Please create an account.');
-        this.router.navigateByUrl('/register');
+    if (event.emailAddress in localStorage) {
+        if (JSON.parse(localStorage.getItem(event.emailAddress))['Password'] === event.passWord) {
+          this.router.navigateByUrl('/nutrition');
+        } else { Swal.fire('Password is incorrect. Please enter correct password'); }
       } else {
-        if (localStorage.getItem('EmailAddress') === event.emailAddress && localStorage.getItem('Password') !== event.passWord) {
-          Swal.fire('Password is incorrect. Please enter correct password');
-        } else {
-          if (localStorage.getItem('EmailAddress') === event.emailAddress && localStorage.getItem('Password') === event.passWord) {
-            this.router.navigateByUrl('/nutrition');
-          }
-        }
-      }
+      Swal.fire('Your do not have an account. Please create an account.');
+     this.router.navigateByUrl('/register');
     }
   }
   ngOnInit() {
+    this.date = this.dateService.displayDate();
   }
 
 }

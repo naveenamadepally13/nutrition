@@ -23,3 +23,18 @@ footer{
   background-color: rgba(106, 155, 135, 0.4);
   height: 63PX
 }
+
+.nameheading
+{
+  font-family: Georgia, serif;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  word-spacing: 1.6px;
+  color: #3c3c3d;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: capitalize;
+  padding-left: 15px;
+}

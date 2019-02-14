@@ -1,11 +1,16 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light navbgcolor">
+    <div class="col-6">
     <img  class="logo" src="../assets/images/logo.png"/>
-    <a class="heading" href="#">Nutrition Facts</a>
+    <a class="navbar-brand heading" href="#">Nutrition Facts</a>
+    </div>
+    <div class="text-right nameheading col-6">
+    <label *ngIf="onNutrition == false">{{loginName}}</label>
+    </div>
   </nav>
 </header>
 <router-outlet style="background-image: url('../assets/images/food_Image.jpg')"></router-outlet>
 <footer class="fixed-bottom">
-  <b style="alignment: center">Copy Right @ team 3-2</b>
+  <b style="alignment: center" class="float-right">Copyright <i class="fa fa-copyright"></i> team 3-2</b>
 </footer>
 
