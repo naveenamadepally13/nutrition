@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {textToSpeech} from '@google-cloud/text-to-speech';
 import {NutritionService} from '../nutrition.service';
 
 @Component({
@@ -21,6 +20,9 @@ export class NutritionComponent implements OnInit {
       this.foodData = respDataCondition;
       this.finalfoodData = this.foodData.hits[0].fields;
     }, error => {});
+  }
+  speechFunction(speechdata) {
+    responsiveVoice.speak(speechdata);
   }
   ngOnInit() {
     this.date = this.dateService.displayDate();
