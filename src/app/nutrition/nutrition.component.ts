@@ -22,6 +22,7 @@ export class NutritionComponent implements OnInit {
     }, error => {});
   }
   speechFunction(speechdata) {
+    // @ts-ignore
     responsiveVoice.speak(speechdata);
   }
   ngOnInit() {
