@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NutritionService } from './nutrition.service';
+import { LoginserviceService } from './loginservice.service';
 
-describe('NutritionService', () => {
+describe('LoginserviceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: NutritionService = TestBed.get(NutritionService);
+    const service: LoginserviceService = TestBed.get(LoginserviceService);
     expect(service).toBeTruthy();
   });
 });

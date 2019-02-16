@@ -1,8 +1,7 @@
-// import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import {Router} from '@angular/router';
-import {NutritionService} from '../nutrition.service';
+import {LoginserviceService} from '../loginservice.service';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +10,14 @@ import {NutritionService} from '../nutrition.service';
 })
 export class LoginComponent implements OnInit {
   date;
-  constructor(private router: Router, private dateService: NutritionService) { }
+  constructor(private router: Router, private loginserviceService: LoginserviceService) { }
   loginCreation(event) {
     if (event.emailAddress in localStorage) {
         if (JSON.parse(localStorage.getItem(event.emailAddress))['Password'] === event.passWord) {
           this.router.navigateByUrl('/nutrition');
+          this.loginserviceService.firstname = JSON.parse(localStorage.getItem(event.emailAddress))['FirstName'];
+          this.loginserviceService.secondname = JSON.parse(localStorage.getItem(event.emailAddress))['LastName'];
+
         } else { Swal.fire('Password is incorrect. Please enter correct password'); }
       } else {
       Swal.fire('Your do not have an account. Please create an account.');
@@ -23,7 +25,6 @@ export class LoginComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.date = this.dateService.displayDate();
   }
 
 }

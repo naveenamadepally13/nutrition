@@ -1,6 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {first} from 'rxjs/operators';
-import {Router} from '@angular/router';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +6,5 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  onNutrition: boolean;
   title = 'nutrition';
-  private router: Router;
  }

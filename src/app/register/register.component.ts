@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import 'sweetalert2/src/sweetalert2.scss';
 import {Router} from '@angular/router';
-import {NutritionService} from '../nutrition.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +10,7 @@ import {NutritionService} from '../nutrition.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router: Router, private dateService: NutritionService) { }
+  constructor(private router: Router) { }
   saveUser;
   date;
   registerAccount(event) {
@@ -30,7 +29,6 @@ export class RegisterComponent implements OnInit {
       }}
   }
   ngOnInit() {
-    this.date = this.dateService.displayDate();
   }
 
 }

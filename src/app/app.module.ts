@@ -9,9 +9,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NutritionComponent } from './nutrition/nutrition.component';
 import { RegisterComponent } from './register/register.component';
-import { GoogleChartsModule } from 'angular-google-charts';
-import {NutritionService} from './nutrition.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,10 +21,9 @@ import {NutritionService} from './nutrition.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    GoogleChartsModule,
     AngularFontAwesomeModule
   ],
-  providers: [NutritionService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
